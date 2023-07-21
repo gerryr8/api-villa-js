@@ -1,0 +1,45 @@
+body {
+    background-image: url('../img/clouds-1282314.jpg');
+    font-family: Arial, sans-serif;
+  }
+  
+  #product-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    margin-top: 20px;
+  }
+  
+  .product-info {
+    border: 1px solid #ccc;
+    background-color: #fff;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .product-info h3 {
+    margin-top: 0;
+    color: #333;
+  }
+  
+  .product-info p {
+    margin-bottom: 5px;
+    color: #555;
+  }
+  
+  .product-info img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 10px;
+  }
+  
+  select {
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    color: #555;
+  }
+  
+  

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="productDetails.css">
+    <title>Product Details</title>
+</head>
+<body>
+    <h1>Product Details</h1>
+<div class="flex">
+    <div id="product-details-container">
+        <div class="product-card">
+            <div class="product-content">
+                <div class="img-container"> 
+                    <img class="product-img" id="product-image" alt="">
+                </div>
+                <h2 class="product-title" id="product-title"></h2>
+                <div class="description-over">
+                    <p class="description" id="product-description"></p>
+                </div>
+                <div class="price-container">
+                    <p class="price" id="product-price"></p>
+                    <p id="product-category"></p>
+                    <p id="product-rate"></p>
+                </div>
+            
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <script>
+        // Obtener el ID del producto de la URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const productId = urlParams.get("id");
+
+        // Función para cargar los detalles del producto
+        function loadProductDetails(productId) {
+            fetch(`https://fakestoreapi.com/products/${productId}`)
+                .then(res => res.json())
+                .then(product => {
+                    const productImage = document.getElementById("product-image");
+                    const productTitle = document.getElementById("product-title");
+                    const productDescription = document.getElementById("product-description");
+                    const productPrice = document.getElementById("product-price");
+                    const productCategory = document.getElementById("product-category");
+                    const productRate = document.getElementById("product-rate");
+
+                    productImage.src = product.image;
+                    productImage.alt = product.title;
+                    productTitle.textContent = product.title;
+                    productDescription.textContent = product.description;
+                    productPrice.textContent = `$${product.price}`;
+                    productCategory.textContent = `Category: ${product.category}`;
+                    productRate.textContent = `Category: ${product.rating.rate}`;
+
+                })
+                .catch(error => {
+                    console.error(error);
+                });
+        }
+
+        loadProductDetails(productId);
+    </script>
+</body>
+</html>
