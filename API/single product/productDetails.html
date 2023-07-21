@@ -3,23 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detalles del Productos</title>
+    <link rel="stylesheet" href="productDetails.css">
+    <title>Product Details</title>
 </head>
 <body>
-    <h1>Detalles del Producto</h1>
+    <h1 style="text-align: center;">Product Details</h1>
+<div class="flex">
     <div id="product-details-container">
-        <!-- Aquí se mostrarán los detalles del producto -->
-        <img id="product-image" src="" alt="">
-        <h2 id="product-title"></h2>
-        <p id="product-description"></p>
-        <p id="product-price"></p>
-        <p id="product-category"></p>
-        <p id="product-rate"></p>
+        <div class="product-card">
+            <div class="product-content">
+                <div class="img-container"> 
+                    <img class="product-img" id="product-image" alt="">
+                </div>
+                <h2 class="product-title" id="product-title"></h2>
+                <div class="description-over">
+                    <p class="description" id="product-description"></p>
+                </div>
+                <div class="price-container">
+                    <p class="price" id="product-price"></p>
+                    <p id="product-category"></p>
+                    <p id="product-rate"></p>
+                </div>
+                
+            
+            </div>
+            <div class="button-container">
+               <a href="../items/items.html"> <button class="edit-button">Editar</button></a>
+               <a href="../items/items.html"> <button class="delete-button">Eliminar</button> </a>
+               <a href="../producto/agregar.html"> <button class="add-button">Agregar</button></a>
+            </div>
+        </div>
+        
+    </div>
     </div>
 
-    <!-- Botón para editar -->
-    <button id="edit-button">Editar Producto</button>
-
-    <script src="productdeteail.js"></script> <!-- Reemplaza "tu-archivo.js" con el nombre de tu archivo JavaScript -->
+    <script src="productdeteail.js">
+      
+    </script>
 </body>
 </html>
